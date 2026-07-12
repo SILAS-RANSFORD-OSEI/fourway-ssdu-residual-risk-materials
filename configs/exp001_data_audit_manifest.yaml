@@ -1,0 +1,28 @@
+experiment:
+  id: exp001_data_audit_manifest
+  name: Data audit and volume-level manifest
+
+data:
+  data_root: ""
+  expected_extension: ".h5"
+
+selection:
+  main_acquisition: "AXT2"
+  require_kspace: true
+  require_multicoil: true
+  min_num_coils: 2
+
+split:
+  random_seed: 20260523
+  train_count: 201
+  calibration_count: 40
+  test_count: 40
+
+outputs:
+  output_dir: results/exp001_data_audit_manifest
+  full_manifest_csv: data/manifests/fastmri_brain_multicoil_manifest.csv
+  main_manifest_csv: data/manifests/fastmri_brain_multicoil_axt2_manifest.csv
+  split_csv: data/manifests/fastmri_brain_multicoil_axt2_splits.csv
+  acquisition_counts_csv: results/exp001_data_audit_manifest/acquisition_counts.csv
+  kspace_shape_counts_csv: results/exp001_data_audit_manifest/kspace_shape_counts.csv
+  summary_json: results/exp001_data_audit_manifest/exp001_summary.json

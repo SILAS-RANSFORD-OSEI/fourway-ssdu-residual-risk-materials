@@ -1,0 +1,45 @@
+# Raw medical imaging data
+*.h5
+*.hdf5
+*.nii
+*.nii.gz
+*.dcm
+
+# Model weights and checkpoints
+*.pt
+*.pth
+*.ckpt
+*.onnx
+
+# Large arrays and caches
+*.npy
+*.npz
+*.mat
+cache/
+outputs/
+runs/
+wandb/
+lightning_logs/
+
+# Private paths and credentials
+.env
+*.env
+secrets.*
+credentials.*
+token*
+*.key
+
+# Python
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# Backup/scratch
+*.BACKUP*
+*.bak
+*.tmp
+
+# OS/editor
+.DS_Store
+.vscode/
+.idea/

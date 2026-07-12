@@ -1,0 +1,6 @@
+cff-version: 1.2.0
+title: "Four-way acquired k-space partitioning for residual-risk verification in self-supervised accelerated brain MRI"
+authors:
+  - family-names: Osei
+    given-names: Silas Ransford
+message: "Please cite the associated manuscript when using this repository."

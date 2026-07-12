@@ -1,0 +1,74 @@
+experiment:
+  id: exp008_reliability_ablation_full
+  name: Full ReliabilityCNN ablation study
+
+inputs:
+  cache_manifest: results/exp006_reliability_cache_full/cache_manifest.csv
+
+data:
+  train_split: train
+  val_split: calibration
+  test_split: test
+
+model:
+  in_channels: 6
+  out_channels: 1
+  base_channels: 8
+  psf_channel_index: 5
+  init_psf_weight: 1.0
+  init_psf_bias: 0.0
+
+training:
+  seed: 20260529
+  epochs: 50
+  batch_size: 1
+  num_workers: 0
+  optimizer: Adam
+  learning_rate: 0.0001
+  weight_decay: 0.000001
+  loss: huber
+  huber_delta: 0.1
+  early_stopping_patience: 8
+  min_delta_mae: 0.0005
+
+metrics:
+  top_risk_fraction: 0.10
+  max_metric_pixels: 1000000
+  random_seed: 20260529
+
+baselines:
+  full_test_best_auprc: 0.587222
+  full_test_linear_6ch_auprc: 0.586657
+  full_test_linear_6ch_auroc: 0.954561
+  full_test_linear_6ch_spearman: 0.930631
+  full_test_linear_6ch_pearson: 0.926908
+  full_test_psf_gain_spearman: 0.923660
+
+ablation_variants:
+  A1_no_psf_skip:
+    description: all channels, no explicit q_psf skip
+    use_psf_skip: false
+    zero_channels: []
+
+  A2_no_qpsf_channel:
+    description: zero q_psf channel and remove PSF skip
+    use_psf_skip: false
+    zero_channels: [5]
+
+  A3_no_analytical_psf:
+    description: zero analytical PSF channel, keep q_psf skip
+    use_psf_skip: true
+    zero_channels: [4]
+
+  A4_image_only:
+    description: keep only image, x0, intervention; zero mask, analytical PSF, q_psf; no skip
+    use_psf_skip: false
+    zero_channels: [3, 4, 5]
+
+  A5_no_intervention:
+    description: zero intervention channel, keep PSF channels and skip
+    use_psf_skip: true
+    zero_channels: [2]
+
+outputs:
+  output_root: "${FOURWAY_PROJECT_ROOT}/outputs/exp008_reliability_ablation_full"

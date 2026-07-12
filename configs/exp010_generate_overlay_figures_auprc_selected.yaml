@@ -1,0 +1,60 @@
+experiment:
+  id: exp010_generate_overlay_figures_auprc_selected
+  name: Overlay figures selected by A4-vs-baseline AUPRC margin
+inputs:
+  split_csv: data/manifests/fastmri_brain_multicoil_axt2_splits.csv
+  mask_indices_json: data/processed/fourway_masks/fourway_mask_indices.json
+  reliability_cache_manifest: ${CHECKPOINT_ROOT}/best_model.pt
+  reliability_full: ${FOURWAY_PROJECT_ROOT}/outputs/exp007_train_reliability_cnn_v2_full/best_model.pt
+  reliability_a4_image_only: ${FOURWAY_PROJECT_ROOT}/outputs/exp008_reliability_ablation_full/A4_image_only/best_model.pt
+data:
+  split: test
+  num_cases: 6
+  splits:
+  - test
+  max_volumes_per_split:
+    test: null
+  max_slices_per_volume: null
+  selected_sample_ids:
+  - file_brain_AXT2_203_2030256_slice006
+  - file_brain_AXT2_207_2070194_slice005
+  - file_brain_AXT2_207_2070194_slice007
+  - file_brain_AXT2_208_2080126_slice008
+  - file_brain_AXT2_208_2080611_slice003
+  - file_brain_AXT2_210_6001524_slice006
+reconstruction:
+  body_mask_threshold: 0.03
+  body_mask_softness: 0.02
+normalization:
+  reference_percentile: 99.0
+  epsilon: 1.0e-08
+ssdu_model:
+  features: 16
+  init_step_size: 0.1
+reliability_model:
+  in_channels: 6
+  out_channels: 1
+  base_channels: 8
+  psf_channel_index: 5
+  init_psf_weight: 1.0
+  init_psf_bias: 0.0
+holdout_target:
+  patch_size: 16
+  dcf_kernel_size: 9
+  psf_num_probes: 4
+  psf_seed: 20260530
+  normalize_percentile: 99.0
+  log_alpha: 10.0
+support_mask:
+  source: x0_rss
+  threshold: 0.05
+  softness: 0.02
+  smooth_kernel_size: 15
+  percentile: 99.0
+  power: 1.0
+figures:
+  dpi: 300
+  overlay_alpha: 0.72
+  shared_risk_vmax: 2.397895
+outputs:
+  output_dir: results/exp010_overlay_figures_auprc_selected

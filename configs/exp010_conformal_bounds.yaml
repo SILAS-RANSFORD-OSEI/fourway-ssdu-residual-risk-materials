@@ -1,0 +1,75 @@
+experiment:
+  id: exp010_conformal_bounds
+  name: Split conformal bounds for Lambda-hold residual-risk prediction
+
+inputs:
+  split_csv: data/manifests/fastmri_brain_multicoil_axt2_splits.csv
+  mask_indices_json: data/processed/fourway_masks/fourway_mask_indices.json
+  reliability_cache_manifest: results/exp006_reliability_cache_full/cache_manifest.csv
+
+checkpoints:
+  ssdu_v4: results/exp004_train_ssdu_v4_full/best_model.pt
+  reliability_full: "${FOURWAY_PROJECT_ROOT}/outputs/exp007_train_reliability_cnn_v2_full/best_model.pt"
+  reliability_a4_image_only: "${FOURWAY_PROJECT_ROOT}/outputs/exp008_reliability_ablation_full/A4_image_only/best_model.pt"
+
+data:
+  scale_split: calibration
+  conformal_split: calibration
+  test_split: test
+  calibration_volume_fit_fraction: 0.50
+  max_volumes_per_split:
+    calibration: null
+    test: null
+  max_slices_per_volume: null
+
+reconstruction:
+  body_mask_threshold: 0.03
+  body_mask_softness: 0.02
+
+normalization:
+  reference_percentile: 99.0
+  epsilon: 1.0e-8
+
+ssdu_model:
+  features: 16
+  init_step_size: 0.1
+
+reliability_model:
+  in_channels: 6
+  out_channels: 1
+  base_channels: 8
+  psf_channel_index: 5
+  init_psf_weight: 1.0
+  init_psf_bias: 0.0
+
+holdout_target:
+  patch_size: 16
+  dcf_kernel_size: 9
+  psf_num_probes: 4
+  psf_seed: 20260530
+  normalize_percentile: 99.0
+  log_alpha: 10.0
+
+support_mask:
+  source: x0_rss
+  threshold: 0.05
+  softness: 0.02
+  smooth_kernel_size: 15
+  percentile: 99.0
+  power: 1.0
+
+conformal:
+  alpha: 0.10
+  pixels_per_slice: 512
+  random_seed: 20260531
+
+predictors:
+  - reliability_a4_image_only
+  - reliability_full
+  - image_gradient
+  - xhat_magnitude
+  - psf_gain_channel
+  - intervention_magnitude
+
+outputs:
+  output_dir: results/exp010_conformal_bounds

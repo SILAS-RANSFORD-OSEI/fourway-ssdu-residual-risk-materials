@@ -1,0 +1,32 @@
+experiment:
+  id: exp010_bootstrap_metrics
+  name: Volume-level bootstrap confidence intervals for Lambda-hold metrics
+
+inputs:
+  sampled_test_pixels: results/exp010_conformal_bounds/sampled_test_pixels.csv
+
+predictors:
+  - reliability_a4_image_only
+  - reliability_full
+  - image_gradient
+  - xhat_magnitude
+  - psf_gain_channel
+  - intervention_magnitude
+
+reference_predictor: reliability_a4_image_only
+
+comparisons:
+  - reliability_full
+  - image_gradient
+  - xhat_magnitude
+  - psf_gain_channel
+  - intervention_magnitude
+
+bootstrap:
+  n_iterations: 1000
+  random_seed: 20260531
+  confidence_level: 0.95
+  top_risk_fraction: 0.10
+
+outputs:
+  output_dir: results/exp010_bootstrap_metrics

@@ -1,0 +1,68 @@
+experiment:
+  id: exp009_holdout_verification_full
+  name: Full Lambda-hold verification of frozen ReliabilityCNN
+
+inputs:
+  split_csv: data/manifests/fastmri_brain_multicoil_axt2_splits.csv
+  mask_indices_json: data/processed/fourway_masks/fourway_mask_indices.json
+  reliability_cache_manifest: results/exp006_reliability_cache_full/cache_manifest.csv
+
+checkpoints:
+  ssdu_v4: results/exp004_train_ssdu_v4_full/best_model.pt
+  reliability_full: "${FOURWAY_PROJECT_ROOT}/outputs/exp007_train_reliability_cnn_v2_full/best_model.pt"
+  reliability_a4_image_only: "${FOURWAY_PROJECT_ROOT}/outputs/exp008_reliability_ablation_full/A4_image_only/best_model.pt"
+
+data:
+  splits:
+    - train
+    - calibration
+    - test
+  max_volumes_per_split:
+    train: null
+    calibration: null
+    test: null
+  max_slices_per_volume: null
+
+reconstruction:
+  body_mask_threshold: 0.03
+  body_mask_softness: 0.02
+
+normalization:
+  reference_percentile: 99.0
+  epsilon: 1.0e-8
+
+ssdu_model:
+  features: 16
+  init_step_size: 0.1
+
+reliability_model:
+  in_channels: 6
+  out_channels: 1
+  base_channels: 8
+  psf_channel_index: 5
+  init_psf_weight: 1.0
+  init_psf_bias: 0.0
+
+holdout_target:
+  patch_size: 16
+  dcf_kernel_size: 9
+  psf_num_probes: 4
+  psf_seed: 20260530
+  normalize_percentile: 99.0
+  log_alpha: 10.0
+
+support_mask:
+  source: x0_rss
+  threshold: 0.05
+  softness: 0.02
+  smooth_kernel_size: 15
+  percentile: 99.0
+  power: 1.0
+
+metrics:
+  top_risk_fraction: 0.10
+  max_metric_pixels_per_split: 1000000
+  random_seed: 20260530
+
+outputs:
+  output_dir: "${FOURWAY_PROJECT_ROOT}/outputs/exp009_holdout_verification_full"
