@@ -1,0 +1,31 @@
+{
+  "experiment_id": "exp003_zero_filled_rss",
+  "experiment_name": "Multicoil zero-filled RSS baseline",
+  "run_label": "smoke",
+  "num_volumes_processed": 3,
+  "num_slices_processed": 48,
+  "splits_processed": {
+    "train": 3
+  },
+  "r_omega_min": 4.0,
+  "r_omega_max": 4.0,
+  "r_theta_min": 6.387096774193548,
+  "r_theta_max": 6.426229508196721,
+  "r_theta_mean": 6.400141018861272,
+  "mean_volume_nmse": 0.05594782903790474,
+  "mean_volume_psnr": 25.738146248243073,
+  "mean_slice_ssim": 0.6672494743627101,
+  "mean_slice_hfen": 0.693582933396101,
+  "normalization": {
+    "percentile": 99.0,
+    "epsilon": 1e-08
+  },
+  "uses_theta_only": true,
+  "ifft_scaling_policy": "orthonormal_ifft_no_rtheta_amplification",
+  "outputs": {
+    "slice_metrics_csv": "results/exp003_zero_filled_rss/smoke/slice_metrics.csv",
+    "volume_metrics_csv": "results/exp003_zero_filled_rss/smoke/volume_metrics.csv",
+    "summary_json": "results/exp003_zero_filled_rss/smoke/exp003_summary.json",
+    "example_figure": "results/exp003_zero_filled_rss/smoke/example_reconstructions.png"
+  }
+}

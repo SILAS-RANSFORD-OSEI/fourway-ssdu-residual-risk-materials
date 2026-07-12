@@ -1,0 +1,10 @@
+{
+  "experiment_id": "exp010_generate_figures_a4_vs_gradient",
+  "device": "cuda",
+  "num_cases": 6,
+  "selection_metric": "a4_minus_gradient_spearman",
+  "outputs": {
+    "figure_manifest_csv": "results/exp010_figures_a4_vs_gradient/figure_manifest.csv",
+    "output_dir": "results/exp010_figures_a4_vs_gradient"
+  }
+}

@@ -1,0 +1,4 @@
+# Figure 3
+
+**Figure 3. Independent $\Lambda_{\mathrm{hold}}$ residual-risk verification performance across predictor families.**
+Points show volume-bootstrap mean estimates, and horizontal whiskers show the corresponding 95% bootstrap confidence intervals computed from 1000 volume-level bootstrap replicates. Predictors are ordered by the primary endpoint, Top-10% AUPRC. A4 matched Full CNN on high-risk localisation, achieved low residual-risk scale error, and retained strong rank agreement, whereas direct risk-target transfer retained the strongest Spearman correlation but weaker high-risk localisation and scale agreement. For AUPRC and Spearman correlation, higher values indicate better performance; for MAE, lower values indicate better performance. MAE = mean absolute error; AUPRC = area under the precision-recall curve.

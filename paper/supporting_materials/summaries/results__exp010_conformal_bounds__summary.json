@@ -1,0 +1,44 @@
+{
+  "experiment_id": "exp010_conformal_bounds",
+  "device": "cuda",
+  "alpha": 0.1,
+  "target_coverage": 0.9,
+  "training_performed": false,
+  "checkpoint_selection_performed": false,
+  "lambda_hold_used": true,
+  "predictors": [
+    "reliability_a4_image_only",
+    "reliability_full",
+    "image_gradient",
+    "xhat_magnitude",
+    "psf_gain_channel",
+    "intervention_magnitude"
+  ],
+  "best_by_interval_width": {
+    "predictor": "reliability_a4_image_only",
+    "affine_a": 0.9999774624124736,
+    "affine_b": 0.01086595501940596,
+    "qhat": 0.24759245819435427,
+    "num_scale_pixels": 162816,
+    "num_conformal_pixels": 162816,
+    "num_test_pixels": 325632,
+    "target_coverage": 0.9,
+    "coverage": 0.8966901287342768,
+    "interval_width": 0.49518491638870854,
+    "mae": 0.08227086797692078,
+    "mse": 0.02713839561475172,
+    "pearson": 0.9715123254403935,
+    "spearman": 0.9516263999780094,
+    "top_fraction": 0.1,
+    "top_threshold": 1.7346055746078497,
+    "top_risk_auroc": 0.9823455282613648,
+    "top_risk_auprc": 0.8421053213072274
+  },
+  "outputs": {
+    "conformal_summary_csv": "results/exp010_conformal_bounds/conformal_summary.csv",
+    "conformal_volume_metrics_csv": "results/exp010_conformal_bounds/conformal_volume_metrics.csv",
+    "sampled_calibration_pixels_csv": "results/exp010_conformal_bounds/sampled_calibration_pixels.csv",
+    "sampled_test_pixels_csv": "results/exp010_conformal_bounds/sampled_test_pixels.csv",
+    "summary_json": "results/exp010_conformal_bounds/summary.json"
+  }
+}

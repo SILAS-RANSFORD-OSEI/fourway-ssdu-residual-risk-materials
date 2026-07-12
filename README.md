@@ -38,7 +38,7 @@ This repository does not include:
 - trained model checkpoints,
 - large cache arrays,
 - Google Drive paths,
-- authentication credentials,
+- authentication access files,
 - private experiment logs,
 - intermediate Colab outputs.
 

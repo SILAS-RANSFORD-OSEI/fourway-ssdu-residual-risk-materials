@@ -1,0 +1,36 @@
+{
+  "experiment_id": "exp011_direct_risk_baseline",
+  "device": "cpu",
+  "split": "test",
+  "pixels_per_slice": 1024,
+  "num_pixel_rows": 651264,
+  "predictors": [
+    "direct_lambda_risk",
+    "direct_lambda_risk_raw",
+    "reliability_a4_image_only",
+    "reliability_full",
+    "image_gradient",
+    "xhat_magnitude",
+    "psf_gain_channel",
+    "intervention_magnitude"
+  ],
+  "best_by_auprc": {
+    "split": "test",
+    "predictor": "reliability_a4_image_only",
+    "mae": 0.08011650426184626,
+    "mse": 0.027151943130517917,
+    "pearson": 0.9714166572424698,
+    "spearman": 0.9520923466404775,
+    "top_fraction": 0.1,
+    "top_threshold": 1.7299606680870057,
+    "top_risk_auroc": 0.9821777501235176,
+    "top_risk_auprc": 0.8412422284321347,
+    "num_eval_pixels": 651264
+  },
+  "outputs": {
+    "pixel_predictions_csv": "results/exp011_direct_risk_baseline/pixel_predictions.csv",
+    "direct_risk_summary_csv": "results/exp011_direct_risk_baseline/direct_risk_summary.csv",
+    "direct_risk_volume_metrics_csv": "results/exp011_direct_risk_baseline/direct_risk_volume_metrics.csv",
+    "summary_json": "results/exp011_direct_risk_baseline/summary.json"
+  }
+}

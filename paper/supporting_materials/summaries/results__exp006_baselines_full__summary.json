@@ -1,0 +1,36 @@
+{
+  "experiment_id": "exp006_baselines_full",
+  "num_cache_samples": 4462,
+  "train_samples": 3190,
+  "calibration_samples": 636,
+  "test_samples": 636,
+  "fit_pixels_sampled": 998470,
+  "baselines": [
+    "constant_mean",
+    "image_gradient",
+    "intervention",
+    "psf_gain",
+    "linear_6ch"
+  ],
+  "best_test_by_spearman": {
+    "split": "test",
+    "baseline": "linear_6ch",
+    "mae": 0.14888237950919672,
+    "mse": 0.06773784163810168,
+    "pearson": 0.9269079860811728,
+    "spearman": 0.9306314220959039,
+    "top_fraction": 0.1,
+    "top_threshold": 1.7294921875,
+    "top_risk_auroc": 0.954561393013371,
+    "top_risk_auprc": 0.5866571849151958,
+    "num_eval_pixels_sampled": 999792
+  },
+  "lambda_risk_used_in_target": true,
+  "lambda_hold_used": false,
+  "outputs": {
+    "baseline_summary_csv": "results/exp006_baselines_full/baseline_summary.csv",
+    "baseline_sample_metrics_csv": "results/exp006_baselines_full/baseline_sample_metrics.csv",
+    "baseline_params_json": "results/exp006_baselines_full/baseline_params.json",
+    "summary_json": "results/exp006_baselines_full/summary.json"
+  }
+}

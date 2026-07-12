@@ -1,0 +1,24 @@
+Item,Value,Notes
+Dataset,fastMRI brain multicoil,Retrospective multicoil brain MRI reconstruction dataset.
+Acquisition subset,AXT2,All reported experiments were restricted to the axial T2-weighted acquisition subset.
+Readable AXT2 volumes,281,Readable AXT2 volumes retained after the data audit.
+Training volumes,201,Volumes assigned to SSDU reconstruction and residual-risk predictor training.
+Calibration volumes,40,"Volumes reserved for calibration procedures, including affine scaling and conformal quantile estimation."
+Independent test volumes,40,Volumes reserved for final independent residual-risk verification.
+Split unit,volume,"No slice-level mixing was used across train, calibration, and test splits."
+Volume-overlap check,train-calibration=0; train-test=0; calibration-test=0,Overlap counts computed from the split manifest.
+Patient-overlap check,train-calibration=0; train-test=0; calibration-test=0,Overlap counts computed from patient identifiers when available.
+Observed coil counts,"4, 6, 8, 10, 12, 14, 16, 18, 20",Variable multicoil configurations were retained.
+Observed k-space shapes,"(16, 20, 768, 396): 65; (16, 16, 768, 396): 65; (16, 4, 640, 320): 56; (16, 20, 640, 320): 17; (16, 14, 768, 396): 14; 21 unique shapes total",Variable k-space matrix dimensions were retained.
+Evaluation split,test,Split used for independent residual-risk verification.
+Independent test volumes represented in evaluation,40,Unique test volumes represented in the independent verification metric files.
+Independent test slices,636,Computed as total sampled pixel rows divided by sampled pixels per slice.
+Sampled pixels per slice for metric evaluation,"1,024",Pixel samples used per slice for pixel-level metric computation.
+Total independent test pixel samples,"651,264",Total pixel samples used for independent test-set residual-risk verification.
+Conformal target coverage,0.900,Nominal marginal coverage used for split conformal residual-risk bounds.
+Learned/heuristic conformal scale pixel samples,"162,816",Scale subset used for affine output correction in the learned and heuristic conformal analysis.
+Learned/heuristic conformal calibration pixel samples,"162,816",Pixel-level nonconformity samples used for conformal quantile estimation in the learned and heuristic conformal analysis.
+Learned/heuristic conformal test pixel samples,"325,632",Pixel samples used for conformal test evaluation in the learned and heuristic conformal analysis.
+Direct-risk conformal scale pixel samples,"327,680",Scale subset used for affine output correction in the direct residual-risk conformal analysis.
+Direct-risk conformal calibration pixel samples,"323,584",Pixel-level nonconformity samples used for conformal quantile estimation in the direct residual-risk conformal analysis.
+Direct-risk conformal test pixel samples,"651,264",Pixel samples used for conformal test evaluation in the direct residual-risk conformal analysis.

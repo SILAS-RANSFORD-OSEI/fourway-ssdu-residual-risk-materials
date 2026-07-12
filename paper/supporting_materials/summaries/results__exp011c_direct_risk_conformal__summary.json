@@ -1,0 +1,19 @@
+{
+  "experiment_id": "exp011c_direct_risk_conformal",
+  "device": "cpu",
+  "target_coverage": 0.9,
+  "predictors": [
+    "direct_lambda_risk",
+    "direct_lambda_risk_raw"
+  ],
+  "num_calibration_pixels": 651264,
+  "num_test_pixels": 651264,
+  "scale_volumes": 20,
+  "conformal_volumes": 20,
+  "outputs": {
+    "direct_risk_conformal_summary_csv": "results/exp011c_direct_risk_conformal/direct_risk_conformal_summary.csv",
+    "direct_risk_conformal_volume_metrics_csv": "results/exp011c_direct_risk_conformal/direct_risk_conformal_volume_metrics.csv",
+    "direct_risk_conformal_sampled_pixels_csv": "results/exp011c_direct_risk_conformal/direct_risk_conformal_sampled_pixels.csv",
+    "summary_json": "results/exp011c_direct_risk_conformal/summary.json"
+  }
+}

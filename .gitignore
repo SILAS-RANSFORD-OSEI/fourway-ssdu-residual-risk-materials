@@ -43,3 +43,9 @@ __pycache__/
 .DS_Store
 .vscode/
 .idea/
+
+# Local audit files generated during public-release preparation
+materials_inventory_private_and_drive.csv
+candidate_public_support_materials.csv
+candidate_public_support_materials_safety_scan.csv
+curated_safe_support_candidates.csv

@@ -1,0 +1,8 @@
+Comparator,AUPRC wins,Spearman wins,MAE wins
+Direct $u_{\Lambda_{\mathrm{risk}}}$,38/40 (0.950),10/40 (0.250),35/40 (0.875)
+Direct raw residual,39/40 (0.975),35/40 (0.875),40/40 (1.000)
+Full CNN,25/40 (0.625),38/40 (0.950),32/40 (0.800)
+PSF/gain,40/40 (1.000),40/40 (1.000),40/40 (1.000)
+Reconstruction magnitude,40/40 (1.000),40/40 (1.000),40/40 (1.000)
+Image gradient,40/40 (1.000),40/40 (1.000),40/40 (1.000)
+Intervention magnitude,40/40 (1.000),40/40 (1.000),40/40 (1.000)

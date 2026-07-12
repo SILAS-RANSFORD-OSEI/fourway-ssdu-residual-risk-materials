@@ -1,0 +1,7 @@
+{
+  "experiment_id": "exp010_generate_overlay_figures_auprc_selected",
+  "device": "cpu",
+  "num_cases": 6,
+  "output_dir": "results/exp010_overlay_figures_auprc_selected",
+  "manifest_csv": "results/exp010_overlay_figures_auprc_selected/overlay_figure_manifest.csv"
+}

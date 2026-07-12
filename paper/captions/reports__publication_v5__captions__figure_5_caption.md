@@ -1,0 +1,4 @@
+# Figure 5
+
+**Figure 5. Volume-level stability of A4 residual-risk verification.**
+Each point represents one independent test volume, and boxes summarise paired A4-versus-comparator differences across the 40 independent test volumes. (a) Top-10% AUPRC differences measured high-risk localisation; positive values favoured A4. (b) MAE reduction was computed as comparator minus A4; positive values therefore indicated lower residual-risk scale error for A4. (c) Spearman correlation differences measured global rank agreement; positive values favoured A4. The dashed vertical line indicates no difference. A4 showed stable high-risk localisation and scale-error gains over direct raw residual transfer and deterministic descriptors, while remaining comparable to Full CNN. AUPRC = area under the precision-recall curve; MAE = mean absolute error.

@@ -1,0 +1,33 @@
+{
+  "experiment_id": "exp003_zero_filled_rss",
+  "experiment_name": "Multicoil zero-filled RSS baseline",
+  "run_label": "full",
+  "num_volumes_processed": 281,
+  "num_slices_processed": 4462,
+  "splits_processed": {
+    "train": 201,
+    "calibration": 40,
+    "test": 40
+  },
+  "r_omega_min": 4.0,
+  "r_omega_max": 4.0,
+  "r_theta_min": 5.913043478260869,
+  "r_theta_max": 6.426229508196721,
+  "r_theta_mean": 6.299783933060544,
+  "mean_volume_nmse": 0.06291999699700346,
+  "mean_volume_psnr": 24.905243688009925,
+  "mean_slice_ssim": 0.6414100971121979,
+  "mean_slice_hfen": 0.6962047945490238,
+  "normalization": {
+    "percentile": 99.0,
+    "epsilon": 1e-08
+  },
+  "uses_theta_only": true,
+  "ifft_scaling_policy": "orthonormal_ifft_no_rtheta_amplification",
+  "outputs": {
+    "slice_metrics_csv": "results/exp003_zero_filled_rss/full/slice_metrics.csv",
+    "volume_metrics_csv": "results/exp003_zero_filled_rss/full/volume_metrics.csv",
+    "summary_json": "results/exp003_zero_filled_rss/full/exp003_summary.json",
+    "example_figure": "results/exp003_zero_filled_rss/full/example_reconstructions.png"
+  }
+}

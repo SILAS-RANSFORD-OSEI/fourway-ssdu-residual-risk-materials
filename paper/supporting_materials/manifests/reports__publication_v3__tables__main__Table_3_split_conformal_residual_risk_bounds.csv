@@ -1,0 +1,9 @@
+Predictor,Target coverage,Observed coverage,q-hat,Interval width (2 q-hat)
+A4 CNN,0.900,0.897,0.248,0.495
+Full CNN,0.900,0.899,0.258,0.516
+Direct $u_{\Lambda_{\mathrm{risk}}}$,0.900,0.907,0.307,0.614
+Direct raw residual,0.900,0.909,0.842,1.683
+PSF/gain,0.900,0.900,0.455,0.910
+Reconstruction magnitude,0.900,0.906,0.818,1.637
+Image gradient,0.900,0.907,0.948,1.895
+Intervention magnitude,0.900,0.906,1.333,2.667

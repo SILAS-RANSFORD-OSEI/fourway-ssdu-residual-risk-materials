@@ -1,0 +1,10 @@
+{
+  "experiment_id": "exp010_generate_figures",
+  "device": "cuda",
+  "num_cases": 6,
+  "selection_metric": "target_hold_p99",
+  "outputs": {
+    "figure_manifest_csv": "results/exp010_figures/figure_manifest.csv",
+    "output_dir": "results/exp010_figures"
+  }
+}

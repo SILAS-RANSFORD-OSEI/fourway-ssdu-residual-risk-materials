@@ -1,0 +1,5 @@
+figure,file_png,file_pdf,description
+Figure 3A,fig3a_lambda_hold_auprc_forest.png,fig3a_lambda_hold_auprc_forest.pdf,Top-10% AUPRC with 95% volume-bootstrap confidence intervals.
+Figure 3B,fig3b_lambda_hold_spearman_forest.png,fig3b_lambda_hold_spearman_forest.pdf,Spearman correlation with 95% volume-bootstrap confidence intervals.
+Figure 4A,fig4a_conformal_coverage.png,fig4a_conformal_coverage.pdf,Observed split conformal coverage against target 90% coverage.
+Figure 4B,fig4b_conformal_interval_width.png,fig4b_conformal_interval_width.pdf,Conformal interval width comparison.

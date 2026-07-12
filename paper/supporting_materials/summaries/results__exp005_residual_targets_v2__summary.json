@@ -1,0 +1,27 @@
+{
+  "experiment_id": "exp005_residual_targets_v2",
+  "device": "cuda",
+  "num_rows": 208,
+  "splits": [
+    "train",
+    "calibration"
+  ],
+  "patch_sizes": [
+    8,
+    16
+  ],
+  "lambda_risk_used": true,
+  "lambda_hold_used": false,
+  "all_targets_finite": true,
+  "all_masked_targets_finite": true,
+  "all_masked_log_targets_finite": true,
+  "mean_nonzero_fraction": 1.0,
+  "mean_masked_nonzero_fraction": 1.0,
+  "mean_support_mask": 0.3153280412348417,
+  "outputs": {
+    "target_statistics_csv": "results/exp005_residual_targets_v2/target_statistics.csv",
+    "summary_by_patch_csv": "results/exp005_residual_targets_v2/summary_by_patch.csv",
+    "example_targets_png": "results/exp005_residual_targets_v2/example_targets.png",
+    "summary_json": "results/exp005_residual_targets_v2/summary.json"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "experiment_id": "exp011b_direct_risk_bootstrap_comparison",
+  "reference": "reliability_a4_image_only",
+  "comparators": [
+    "direct_lambda_risk",
+    "direct_lambda_risk_raw",
+    "reliability_full",
+    "image_gradient",
+    "xhat_magnitude",
+    "psf_gain_channel",
+    "intervention_magnitude"
+  ],
+  "n_bootstrap": 1000,
+  "outputs": {
+    "bootstrap_samples": "results/exp011_direct_risk_baseline/direct_risk_bootstrap_samples.csv",
+    "bootstrap_differences": "results/exp011_direct_risk_baseline/direct_risk_bootstrap_differences.csv",
+    "volume_win_rates": "results/exp011_direct_risk_baseline/direct_risk_volume_win_rates.csv"
+  }
+}
