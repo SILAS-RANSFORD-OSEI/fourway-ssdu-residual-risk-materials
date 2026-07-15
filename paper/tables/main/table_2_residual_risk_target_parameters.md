@@ -5,8 +5,8 @@
 | Numerical stability  | $\epsilon$               | 1.0e-08  | Prevents division by zero during residual-energy normalization.             |
 | Local pooling        | Pooling patch size       | 16       | Aggregates residual energy into local spatial risk regions.                 |
 | Density compensation | DCF kernel size          | 9        | Controls smoothing used in density-compensated adjoint residual projection. |
-| PSF/gain estimation  | Number of PSF probes     | 4        | Sets the number of probes used for PSF/gain-related residual normalization. |
-| PSF/gain estimation  | PSF random seed          | 20260530 | Fixes the random probe generation for reproducibility.                      |
+| Gain-envelope estimation  | Number of gain-envelope probes     | 4        | Sets the number of probes used for Gain-envelope-related residual normalization. |
+| Gain-envelope estimation  | Gain-envelope random seed          | 20260530 | Fixes the random probe generation for reproducibility.                      |
 | Soft support mask    | Support source           | x0_rss   | Defines the image used to construct the soft anatomy/support mask.          |
 | Soft support mask    | Support threshold        | 0.05     | Sets the intensity threshold for support-mask construction.                 |
 | Soft support mask    | Support softness         | 0.02     | Controls the smooth transition of the support mask.                         |

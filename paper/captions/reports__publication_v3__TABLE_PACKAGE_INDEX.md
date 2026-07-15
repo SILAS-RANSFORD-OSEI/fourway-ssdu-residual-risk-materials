@@ -202,7 +202,7 @@ Documents fixed parameters used to construct \(u_{\Lambda}\) from held-out k-spa
 - Numerical stability
 - Local pooling
 - Density compensation
-- PSF/gain estimation
+- Gain-envelope estimation
 - Soft anatomical/support mask
 
 **Source basis:**  

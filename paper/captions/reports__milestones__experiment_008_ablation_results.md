@@ -6,9 +6,9 @@
 
 ## Purpose
 
-Experiment 008 evaluated whether the performance gain of the ReliabilityCNN depends on specific PSF-aware input channels or architectural components.
+Experiment 008 evaluated whether the performance gain of the ReliabilityCNN depends on specific gain-envelope-aware input channels or architectural components.
 
-The full model from Experiment 007-v2 used a six-channel input tensor and a PSF/gain skip connection:
+The full model from Experiment 007-v2 used a six-channel input tensor and a Gain-envelope skip connection:
 
 \[
 \hat{u}
@@ -51,10 +51,10 @@ The full Experiment 006 baseline gate was:
 
 | Variant | Description |
 |---|---|
-| A0 full PSF-skip | full six-channel model with PSF skip |
-| A1 no PSF skip | all channels retained, no explicit \(q_{\mathrm{psf}}\) skip |
+| A0 full gain-envelope-skip | full six-channel model with gain-envelope skip |
+| A1 no gain-envelope skip | all channels retained, no explicit \(q_{\mathrm{psf}}\) skip |
 | A2 no \(q_{\mathrm{psf}}\) | \(q_{\mathrm{psf}}\) channel zeroed and skip removed |
-| A3 no analytical PSF | analytical PSF channel zeroed |
+| A3 no analytical PSF | analytical gain-envelope channel zeroed |
 | A4 image-only | only \(|\hat{x}|\), \(|x_0|\), and \(|\hat{x}-x_0|\) retained |
 | A5 no intervention | \(|\hat{x}-x_0|\) channel zeroed |
 
@@ -62,12 +62,12 @@ The full Experiment 006 baseline gate was:
 
 | Variant | MAE | MSE | Pearson | Spearman | AUROC | AUPRC |
 |---|---:|---:|---:|---:|---:|---:|
-| A0 full PSF-skip | 0.0793 | 0.0265 | 0.9727 | 0.9431 | 0.9829 | 0.8469 |
+| A0 full gain-envelope-skip | 0.0793 | 0.0265 | 0.9727 | 0.9431 | 0.9829 | 0.8469 |
 | A5 no intervention | 0.0791 | 0.0262 | 0.9728 | 0.9484 | 0.9830 | 0.8463 |
 | A2 no \(q_{\mathrm{psf}}\) | 0.0790 | 0.0275 | 0.9716 | 0.9522 | 0.9825 | 0.8462 |
 | A4 image-only | 0.0767 | 0.0262 | 0.9729 | 0.9561 | 0.9829 | 0.8459 |
 | A3 no analytical PSF | 0.0777 | 0.0262 | 0.9729 | 0.9456 | 0.9827 | 0.8446 |
-| A1 no PSF skip | 0.0777 | 0.0268 | 0.9723 | 0.9564 | 0.9828 | 0.8429 |
+| A1 no gain-envelope skip | 0.0777 | 0.0268 | 0.9723 | 0.9564 | 0.9828 | 0.8429 |
 
 ## Interpretation
 
@@ -105,7 +105,7 @@ The stronger and more defensible conclusion is:
 
 **The residual-risk target is highly predictable by nonlinear CNNs, and the predictive information appears distributed across redundant reconstruction-domain and acquisition-derived representations.**
 
-The full PSF-aware model remains valid, but its advantage over reduced CNN variants is small. The main performance gain is due to nonlinear CNN modeling rather than a single explicit PSF channel.
+The full gain-envelope-aware model remains valid, but its advantage over reduced CNN variants is small. The main performance gain is due to nonlinear CNN modeling rather than a single explicit PSF channel.
 
 ## Implication for the Paper
 

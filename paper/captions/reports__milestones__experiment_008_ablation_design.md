@@ -6,9 +6,9 @@
 
 ## Purpose
 
-Experiment 008 tests which components of the PSF-aware ReliabilityCNN are responsible for the performance gain observed in full Experiment 007-v2.
+Experiment 008 tests which components of the gain-envelope-aware ReliabilityCNN are responsible for the performance gain observed in full Experiment 007-v2.
 
-Full Experiment 007-v2 showed that the PSF-skip ReliabilityCNN outperformed deterministic and linear baselines across MAE, MSE, Pearson, Spearman, AUROC, and AUPRC.
+Full Experiment 007-v2 showed that the gain-envelope-skip ReliabilityCNN outperformed deterministic and linear baselines across MAE, MSE, Pearson, Spearman, AUROC, and AUPRC.
 
 However, a publishable paper must show that the model components are necessary. Experiment 008 therefore removes or disables key input channels and architectural components.
 
@@ -71,10 +71,10 @@ The full Experiment 007-v2 CNN achieved:
 
 | ID | Model | Description |
 |---|---|---|
-| A0 | Full model | all 6 channels + PSF skip |
-| A1 | No PSF skip | all 6 channels, but remove \(wq_{\mathrm{psf}}\) skip |
+| A0 | Full model | all 6 channels + gain-envelope skip |
+| A1 | No gain-envelope skip | all 6 channels, but remove \(wq_{\mathrm{psf}}\) skip |
 | A2 | No \(q_{\mathrm{psf}}\) channel | set channel 5 to zero and remove skip |
-| A3 | No analytical PSF channel | set channel 4 to zero |
+| A3 | No analytical gain-envelope channel | set channel 4 to zero |
 | A4 | Image-only | use only \(|\hat{x}|, \|x_0\|, |\hat{x}-x_0|\); zero other channels |
 | A5 | No intervention channel | set \(|\hat{x}-x_0|\) channel to zero |
 
@@ -98,9 +98,9 @@ No ablation may use test metrics for model selection.
 
 ## Primary Questions
 
-1. Does removing the PSF skip reduce Spearman/global rank fidelity?
+1. Does removing the gain-envelope skip reduce Spearman/global rank fidelity?
 2. Does removing \(q_{\mathrm{psf}}\) reduce both continuous fidelity and extreme-risk detection?
-3. Does removing the analytical PSF channel reduce AUPRC?
+3. Does removing the analytical gain-envelope channel reduce AUPRC?
 4. Can image-only inputs explain residual risk without acquisition-geometry channels?
 5. Does the intervention channel \(|\hat{x}-x_0|\) contribute to local risk localization?
 
@@ -113,7 +113,7 @@ The strongest evidence would be:
 - full model has highest or near-highest AUPRC,
 - full model has highest or near-highest Spearman/Pearson,
 - removal of PSF-related information degrades performance,
-- image-only model underperforms full PSF-aware model.
+- image-only model underperforms full gain-envelope-aware model.
 
 ## Interpretation Rule
 
