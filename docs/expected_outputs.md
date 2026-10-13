@@ -11,7 +11,7 @@ The revised manuscript reports **six main figures**, **five main tables**, and *
 5. **Figure 5:** Quantitatively selected reconstructed-MRI and residual-risk examples (**restricted-data permission review required before public redistribution**).
 6. **Figure 6:** Residual-risk predictions versus MC-dropout and deep-ensemble predictive variance.
 
-The existing repository may contain older figure numbers, captions, and formats. Treat those as **historical until matched to the submitted R1 manuscript**. Avoid publishing the image-based fifth figure without checking the fastMRI provider's terms.
+Formatted manuscript figures and tables are intentionally **not hosted** in this research-code repository. Figure 5 contains MRI-derived images requiring separate redistribution permission. Historical notes under `paper/captions/` are not authoritative R1 captions.
 
 ## Main tables (R1)
 
@@ -34,4 +34,4 @@ The existing repository may contain older figure numbers, captions, and formats.
 
 ## Public aggregate results
 
-The `paper/supporting_materials/` directory contains (or should contain after staging) aggregate CSVs for holdout verification, clustered bootstrap, volume-aware calibration, AXFLAIR, target construction, verification budget, auxiliary reference error, and R2.6 uncertainty comparisons. These results **do not** include raw data, per-subject or per-slice arrays, or trained weights. Source figures and manuscript tables remain subject to a separate final correspondence check.
+The `paper/supporting_materials/` directory contains (or should contain after staging) aggregate CSVs for holdout verification, clustered bootstrap, volume-aware calibration, AXFLAIR, target construction, verification budget, auxiliary reference error, and R2.6 uncertainty comparisons. These results **do not** include raw data, per-subject or per-slice arrays, or trained weights. The formatted manuscript figures and tables are omitted; the public numerical summaries are retained as aggregate CSVs.

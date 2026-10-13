@@ -39,7 +39,7 @@ These are reported manuscript results. The published aggregate CSVs are under [`
 - [`scripts/`](scripts/) — data-audit, partitioning, training, verification, statistical-analysis, and plotting entry points.
 - [`tests/`](tests/) — unit tests and shape/integrity checks.
 - [`paper/supporting_materials/`](paper/supporting_materials/) — approved aggregate statistical summaries.
-- [`paper/figures/`](paper/figures/) and [`paper/captions/`](paper/captions/) — existing figure/caption assets; **older assets are not necessarily authoritative for R1** and require separate final-figure and data-permission review.
+- `paper/captions/` — archived development notes and earlier captions, not authoritative R1 manuscript assets. Formatted manuscript figures and tables are intentionally omitted.
 - [`docs/`](docs/) — data access, reproduction steps, and expected outputs.
 
 This is the dedicated public materials repository. Experimental development history is maintained separately in the [research repository](https://github.com/SILAS-RANSFORD-OSEI/fourway-ssdu-reliability-mri-v2). Neither repository substitutes for the fastMRI access procedure.
