@@ -81,4 +81,23 @@ Refer to `paper/supporting_materials/` for frozen aggregate AXT2 metrics, bootst
 
 All performance endpoints compare predictions with **measurement-derived residual-risk targets**, not clinical ground truth. AXFLAIR is a within-fastMRI sequence-shift stress test, not external-site validation. Fully sampled reference error is examined only in the auxiliary analysis.
 
-The historical figure/caption files in `paper/figures/` and `paper/captions/` must be cross-checked against the final R1 submission; no figure containing fastMRI anatomy should be released without confirming redistribution permission. See [`expected_outputs.md`](expected_outputs.md).
+## 8. Reproducibility scope
+
+The historical `scripts/exp010_compute_conformal_bounds.py`
+uses pooled pixel-level nonconformity scores. It does not
+implement the R1 volume-event conformal procedure, which
+uses one 90th-percentile absolute-error score per calibration
+volume.
+
+Aggregate results are provided for target-construction
+sensitivity, verification-budget sensitivity, AXFLAIR
+sequence-shift evaluation, fully sampled reference-error
+correspondence, and R2.6 predictive-variance comparisons.
+Complete standalone evaluation and statistical-analysis
+scripts for these results have not been identified in the
+available source archive. Reproduction also requires
+restricted data and intermediate artifacts.
+
+Formatted manuscript figures and tables are omitted.
+Historical material in `paper/captions/` is not authoritative
+for the revised manuscript.
