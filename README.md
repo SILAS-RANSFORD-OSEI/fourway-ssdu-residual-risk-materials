@@ -15,18 +15,7 @@ These roles are disjoint in sample use, **not statistically independent acquisit
 
 The primary predictor is **Full-CNN** (six active input channels; learned PSF/gain skip). **A4-CNN** is the secondary image-derived ablation (six-channel interface with the last three channels zeroed; no PSF/gain skip). The tested MC-dropout and ensemble predictive-variance measures are conceptually different comparators, not interchangeable estimates of residual risk.
 
-## Reported R1 evaluation
 
-| Setting or endpoint | Reported value |
-| --- | --- |
-| AXT2 training / calibration / test | 201 / 40 / 40 MRI volumes |
-| AXT2 test evaluation | 636 slices; 999,792 sampled pixels |
-| Full-CNN test AUPRC / AUROC | 0.8348 / 0.9818 |
-| Full-CNN test MAE / Spearman | 0.0834 / 0.9389 |
-| A4-CNN test AUPRC | 0.8452 |
-| MRI-volume interval event coverage | 39/40 (0.975) for each predictor |
-| Full-CNN AUPRC with 25% of reserved lines retained | 0.7890 |
-| Full-CNN AXFLAIR AUPRC | 0.7854 |
 
 
 
