@@ -1,6 +1,6 @@
 # Measurement-derived residual-risk verification through four-way k-space partitioning in self-supervised accelerated brain MRI
 
-Research software and selected supporting material for the revised manuscript submitted to *Magnetic Resonance Imaging*. This repository is a reproducibility resource, **not** a distribution of the fastMRI dataset, and its contents must not be interpreted as a clinically validated system.
+Research software and selected supporting material for the revised manuscript submitted to *Magnetic Resonance Imaging*.
 
 ## Research scope
 
@@ -28,9 +28,8 @@ The primary predictor is **Full-CNN** (six active input channels; learned PSF/ga
 | Full-CNN AUPRC with 25% of reserved lines retained | 0.7890 |
 | Full-CNN AXFLAIR AUPRC | 0.7854 |
 
-AXFLAIR is a **patient-disjoint, within-fastMRI cross-sequence stress test**, not independent external or clinical validation. Fully sampled reference images were used only for an auxiliary post-development correspondence analysis. The comparison of residual risk with image error was positive but moderate. The requested full multi-seed retraining under alternative random role partitions was **not completed**; no results are claimed for it.
 
-These are reported manuscript results. The published aggregate CSVs are under [`paper/supporting_materials/`](paper/supporting_materials/). Unit tests do not constitute end-to-end regeneration of these numbers.
+
 
 ## Repository layout
 
@@ -42,7 +41,7 @@ These are reported manuscript results. The published aggregate CSVs are under [`
 - `paper/captions/` — archived development notes and earlier captions, not authoritative R1 manuscript assets. Formatted manuscript figures and tables are intentionally omitted.
 - [`docs/`](docs/) — data access, reproduction steps, and expected outputs.
 
-This is the dedicated public materials repository. Experimental development history is maintained separately in the [research repository](https://github.com/SILAS-RANSFORD-OSEI/fourway-ssdu-reliability-mri-v2). Neither repository substitutes for the fastMRI access procedure.
+This is the dedicated public materials repository. Experimental development history is maintained separately in the [research repository](https://github.com/SILAS-RANSFORD-OSEI/fourway-ssdu-reliability-mri-v2).
 
 ## Installation
 
@@ -55,7 +54,7 @@ python -m pip install pytest
 python -m pytest -q
 ```
 
-See [`docs/data_access.md`](docs/data_access.md) to obtain the dataset lawfully and [`docs/reproduction.md`](docs/reproduction.md) for the experiment prerequisites, ordered commands, and current reproduction limitations.
+See [`docs/data_access.md`](docs/data_access.md) to obtain the dataset lawfully and [`docs/reproduction.md`](docs/reproduction.md) for the experiment prerequisites, and current reproduction limitations.
 
 ## Redistribution and research integrity
 
