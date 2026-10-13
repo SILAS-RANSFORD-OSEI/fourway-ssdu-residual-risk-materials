@@ -1,12 +1,37 @@
-# Expected outputs
+# Expected outputs — revised Paper 1
 
-The final manuscript materials include:
+The revised manuscript reports **six main figures**, **five main tables**, and **eight supplementary tables**. The following outline records their substantive roles; it does not imply that every figure or table has been cleared for redistribution or rebuilt from the public release.
 
-- figure1_fourway_partition
-- figure2_residual_risk_target
-- figure3_holdout_performance
-- figure4_residual_risk_error_distribution
-- figure5_volume_stability
-- figure6_qualitative_residual_risk_overlay
+## Main figures (R1)
 
-Figures are stored in paper/figures/.
+1. **Figure 1:** Four-way acquired k-space role allocation and partition verification.
+2. **Figure 2:** Construction of the measurement-derived residual-risk target.
+3. **Figure 3:** Primary verification performance (AUPRC, MAE, and Spearman, with MRI-volume bootstrap intervals).
+4. **Figure 4:** MRI-volume empirical interval coverage of Full-CNN and A4-CNN.
+5. **Figure 5:** Quantitatively selected reconstructed-MRI and residual-risk examples (**restricted-data permission review required before public redistribution**).
+6. **Figure 6:** Residual-risk predictions versus MC-dropout and deep-ensemble predictive variance.
+
+The existing repository may contain older figure numbers, captions, and formats. Treat those as **historical until matched to the submitted R1 manuscript**. Avoid publishing the image-based fifth figure without checking the fastMRI provider's terms.
+
+## Main tables (R1)
+
+1. **Table 1:** Study cohorts and dataset composition.
+2. **Table 2:** Paired sensitivity to residual-risk target-construction choices.
+3. **Table 3:** Reserved verification fraction sensitivity.
+4. **Table 4:** Within-fastMRI AXT2-to-AXFLAIR sequence-shift evaluation.
+5. **Table 5:** Auxiliary correspondence with fully sampled reference-image error.
+
+## Supplementary tables (R1)
+
+- **S1:** Fixed parameters for residual-risk target construction.
+- **S2:** Network architecture and predictor/comparator configurations.
+- **S3:** Calibration thresholds for target-construction variants.
+- **S4:** Training controls, selected checkpoints, and observed computational cost.
+- **S5:** Calibration performance and paired Full-CNN comparator contrasts.
+- **S6:** Affine coefficients and empirical interval-coverage summaries.
+- **S7:** Paired effects of reducing reserved verification fractions.
+- **S8:** Paired contrasts of learned residual-risk predictions with predictive-variance scores.
+
+## Public aggregate results
+
+The `paper/supporting_materials/` directory contains (or should contain after staging) aggregate CSVs for holdout verification, clustered bootstrap, volume-aware calibration, AXFLAIR, target construction, verification budget, auxiliary reference error, and R2.6 uncertainty comparisons. These results **do not** include raw data, per-subject or per-slice arrays, or trained weights. Source figures and manuscript tables remain subject to a separate final correspondence check.

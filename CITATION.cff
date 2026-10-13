@@ -1,6 +1,21 @@
 cff-version: 1.2.0
-title: "Four-way acquired k-space partitioning for residual-risk verification in self-supervised accelerated brain MRI"
+message: >-
+  Cite the associated research manuscript when using these materials.
+  This repository provides software and aggregate summaries, not the fastMRI dataset.
+title: >-
+  Measurement-derived residual-risk verification through four-way k-space
+  partitioning in self-supervised accelerated brain MRI
 authors:
   - family-names: Osei
-    given-names: Silas Ransford
-message: "Please cite the associated manuscript when using this repository."
+    given-names: Ransford Silas
+  - family-names: Osei
+    given-names: Frank
+  - family-names: Ampadu
+    given-names: Stephen Obeng
+url: https://github.com/SILAS-RANSFORD-OSEI/fourway-ssdu-residual-risk-materials
+keywords:
+  - magnetic resonance imaging
+  - self-supervised reconstruction
+  - k-space partitioning
+  - residual-risk verification
+  - reproducibility

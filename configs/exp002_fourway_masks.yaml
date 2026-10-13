@@ -3,7 +3,7 @@ experiment:
   name: ACS-protected four-way k-space mask generation
 
 inputs:
-  split_csv: data/manifests/fastmri_brain_multicoil_axt2_splits.csv
+  split_csv: local_data/manifests/fastmri_brain_multicoil_axt2_splits.csv
 
 mask:
   target_acceleration: 4.0
@@ -18,9 +18,9 @@ partition:
   lambda_hold_fraction: 0.10
 
 outputs:
-  output_dir: results/exp002_fourway_masks
-  mask_indices_json: data/processed/fourway_masks/fourway_mask_indices.json
-  mask_stats_csv: results/exp002_fourway_masks/fourway_mask_stats.csv
-  verification_csv: results/exp002_fourway_masks/fourway_mask_verification.csv
-  summary_json: results/exp002_fourway_masks/exp002_summary.json
-  example_figure: results/exp002_fourway_masks/example_fourway_masks.png
+  output_dir: local_outputs/exp002_fourway_masks
+  mask_indices_json: local_data/processed/fourway_masks/fourway_mask_indices.json
+  mask_stats_csv: local_outputs/exp002_fourway_masks/fourway_mask_stats.csv
+  verification_csv: local_outputs/exp002_fourway_masks/fourway_mask_verification.csv
+  summary_json: local_outputs/exp002_fourway_masks/exp002_summary.json
+  example_figure: local_outputs/exp002_fourway_masks/example_fourway_masks.png

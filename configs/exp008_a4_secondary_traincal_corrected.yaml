@@ -1,0 +1,42 @@
+experiment:
+  id: exp008_a4_secondary_traincal_corrected
+  name: A4 image-only secondary ablation on corrected train/calibration cache
+inputs:
+  cache_manifest: local_outputs/exp006_reliability_cache_traincal_theta_norm_fix/cache_manifest.csv
+data:
+  train_split: train
+  val_split: calibration
+model:
+  in_channels: 6
+  out_channels: 1
+  base_channels: 8
+  psf_channel_index: 5
+  init_psf_weight: 1.0
+  init_psf_bias: 0.0
+training:
+  seed: 20260529
+  epochs: 50
+  batch_size: 1
+  num_workers: 0
+  optimizer: Adam
+  learning_rate: 0.0001
+  weight_decay: 1.0e-06
+  loss: huber
+  huber_delta: 0.1
+  early_stopping_patience: 8
+  min_delta_mae: 0.0005
+metrics:
+  top_risk_fraction: 0.1
+  max_metric_pixels: 1000000
+  random_seed: 20260529
+ablation_variants:
+  A4_image_only:
+    description: keep only image, x0, intervention; zero mask, analytical PSF, q_psf;
+      no skip
+    use_psf_skip: false
+    zero_channels:
+    - 3
+    - 4
+    - 5
+outputs:
+  output_root: local_outputs/exp008_a4_secondary_traincal_corrected

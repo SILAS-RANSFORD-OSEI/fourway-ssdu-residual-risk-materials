@@ -1,0 +1,5 @@
+predictor,notation,construct,role,n_pixels,n_high_risk,high_risk_prevalence,tau_hold,auprc,auroc,spearman
+reliability_full,u_hat_Full,measurement-derived residual-risk predictor,Paper-1 primary,999792,99009,0.09902959815641653,1.7371634244918823,0.8348277343448561,0.9817667144971365,0.9388510057526903
+reliability_a4_image_only,u_hat_A4,image-only measurement-derived residual-risk predictor,Paper-1 secondary,999792,99009,0.09902959815641653,1.7371634244918823,0.845168309926633,0.9821966201844006,0.9387529602343397
+uncertainty_mc,U_MC,MC-dropout predictive dispersion,R2.6 uncertainty comparator,999792,99009,0.09902959815641653,1.7371634244918823,0.6845167312244271,0.9660065976114905,0.6706300260172411
+uncertainty_ens,U_ENS,ensemble predictive disagreement,R2.6 uncertainty comparator,999792,99009,0.09902959815641653,1.7371634244918823,0.31266284469887845,0.8622326535717804,0.8067357364501171

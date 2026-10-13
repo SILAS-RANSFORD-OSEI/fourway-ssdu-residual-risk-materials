@@ -60,17 +60,10 @@ def affine_scale(name, arr, affine_table):
 
 def plot_overlay(cfg, maps, row, affine_table, output_path):
     """
-    Final Figure 6 plotting function.
+    Render a six-panel residual-risk overlay with a shared colorbar.
 
-    Final design:
-    - no super-title
-    - no panel titles
-    - labels only: (a)-(f)
-    - manual axes placement
-    - no middle white band
-    - restored anatomical aspect ratio
-    - tight anatomy-centered crop
-    - shared 0.0-2.5 residual-risk colorbar
+    Uses anatomy-centered cropping, preserved image aspect ratio, and
+    panel labels without separate titles.
     """
 
     from pathlib import Path
@@ -96,9 +89,7 @@ def plot_overlay(cfg, maps, row, affine_table, output_path):
         }
     )
 
-    # ------------------------------------------------------------
     # Helpers
-    # ------------------------------------------------------------
     def pick(d, candidates, label):
         for k in candidates:
             if k in d and d[k] is not None:
@@ -123,9 +114,7 @@ def plot_overlay(cfg, maps, row, affine_table, output_path):
 
         return np.clip((x - lo) / (hi - lo + 1e-8), 0.0, 1.0)
 
-    # ------------------------------------------------------------
-    # Resolve maps using actual keys produced by the pipeline
-    # ------------------------------------------------------------
+    # Resolve the map keys produced by the evaluation pipeline.
     recon = pick(
         maps,
         ["ssdu", "recon", "ssdu_recon", "ssdu_reconstruction", "reconstruction", "xhat", "x_hat"],
@@ -173,9 +162,7 @@ def plot_overlay(cfg, maps, row, affine_table, output_path):
 
     recon01 = robust_norm(recon)
 
-    # ------------------------------------------------------------
     # Tight anatomy-centered crop
-    # ------------------------------------------------------------
     positive = recon01[recon01 > 0]
 
     if positive.size > 0:
@@ -235,9 +222,7 @@ def plot_overlay(cfg, maps, row, affine_table, output_path):
     grad_c = crop(gradient)
     gain_c = crop(gain)
 
-    # ------------------------------------------------------------
-    # Manual layout: no middle white band + true image aspect
-    # ------------------------------------------------------------
+    # Use axes geometry consistent with the image aspect ratio.
     vmin = 0.0
     vmax = 2.5
     overlay_alpha = float(cfg.get("figures", {}).get("overlay_alpha", 0.72))
@@ -334,9 +319,7 @@ def plot_overlay(cfg, maps, row, affine_table, output_path):
             path_effects=[pe.withStroke(linewidth=2.2, foreground="black")],
         )
 
-    # ------------------------------------------------------------
     # Shared colorbar
-    # ------------------------------------------------------------
     sm = cm.ScalarMappable(norm=Normalize(vmin=vmin, vmax=vmax), cmap="magma")
     sm.set_array([])
 
@@ -345,9 +328,7 @@ def plot_overlay(cfg, maps, row, affine_table, output_path):
     cbar.set_label("Log residual-risk units", fontsize=13, labelpad=8)
     cbar.ax.tick_params(labelsize=11, width=1.0, length=4)
 
-    # ------------------------------------------------------------
     # Save
-    # ------------------------------------------------------------
     output_path = Path(output_path)
     output_path.parent.mkdir(parents=True, exist_ok=True)
 

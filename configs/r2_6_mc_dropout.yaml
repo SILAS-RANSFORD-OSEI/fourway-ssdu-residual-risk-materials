@@ -1,0 +1,42 @@
+experiment:
+  id: r2_6_mc_dropout
+  name: Reviewer 2.6 MC-dropout predictive uncertainty comparator
+inputs:
+  cache_manifest: local_outputs/exp006_reliability_cache_traincal_theta_norm_fix/cache_manifest.csv
+data:
+  train_split: train
+  val_split: calibration
+  zero_channels:
+  - 3
+  - 4
+  - 5
+model:
+  class: R26MCDropoutUNet
+  in_channels: 6
+  out_channels: 1
+  base_channels: 8
+  dropout_probability: 0.1
+training:
+  seed: 20260529
+  epochs: 50
+  batch_size: 1
+  num_workers: 0
+  optimizer: Adam
+  learning_rate: 0.0001
+  weight_decay: 1.0e-06
+  loss: huber
+  huber_delta: 0.1
+  early_stopping_patience: 8
+  min_delta_mae: 0.0005
+  checkpoint_selection_metric: calibration_mae
+uncertainty:
+  symbol: U_MC
+  mc_passes: 20
+  variance: population
+  unbiased: false
+governance:
+  lambda_hold_access: false
+  test_access_during_development: false
+  hyperparameter_search: false
+outputs:
+  output_dir: local_outputs/r2_6_uq_comparators/mc_dropout

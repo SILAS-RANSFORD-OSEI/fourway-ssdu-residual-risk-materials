@@ -19,10 +19,10 @@ split:
   test_count: 40
 
 outputs:
-  output_dir: results/exp001_data_audit_manifest
-  full_manifest_csv: data/manifests/fastmri_brain_multicoil_manifest.csv
-  main_manifest_csv: data/manifests/fastmri_brain_multicoil_axt2_manifest.csv
-  split_csv: data/manifests/fastmri_brain_multicoil_axt2_splits.csv
-  acquisition_counts_csv: results/exp001_data_audit_manifest/acquisition_counts.csv
-  kspace_shape_counts_csv: results/exp001_data_audit_manifest/kspace_shape_counts.csv
-  summary_json: results/exp001_data_audit_manifest/exp001_summary.json
+  output_dir: local_outputs/exp001_data_audit_manifest
+  full_manifest_csv: local_data/manifests/fastmri_brain_multicoil_manifest.csv
+  main_manifest_csv: local_data/manifests/fastmri_brain_multicoil_axt2_manifest.csv
+  split_csv: local_data/manifests/fastmri_brain_multicoil_axt2_splits.csv
+  acquisition_counts_csv: local_outputs/exp001_data_audit_manifest/acquisition_counts.csv
+  kspace_shape_counts_csv: local_outputs/exp001_data_audit_manifest/kspace_shape_counts.csv
+  summary_json: local_outputs/exp001_data_audit_manifest/exp001_summary.json

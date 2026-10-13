@@ -1,0 +1,52 @@
+experiment:
+  id: exp004_train_ssdu_v4_full_theta_norm_fix
+  name: Full SSDU retraining with Theta-only normalization
+inputs:
+  split_csv: local_data/manifests/fastmri_brain_multicoil_axt2_splits.csv
+  mask_indices_json: local_data/processed/fourway_masks/fourway_mask_indices.json
+data:
+  train_split: train
+  val_split: calibration
+  max_train_volumes: null
+  max_val_volumes: null
+  max_slices_per_volume: null
+training:
+  epochs: 30
+  batch_size: 1
+  num_workers: 0
+  seed: 20260524
+  accumulation_steps: 4
+  gradient_clip_norm: 10.0
+  loss_type: relative_l1
+  lambda_acs: 1.0
+  body_mask_threshold: 0.03
+  body_mask_softness: 0.02
+  early_stopping_patience: 6
+  min_delta: 0.0001
+normalization:
+  reference_percentile: 99.0
+  epsilon: 1.0e-08
+model:
+  features: 16
+  init_step_size: 0.1
+optimizer:
+  lr: 5.0e-05
+scheduler:
+  enabled: true
+  mode: min
+  factor: 0.5
+  patience: 3
+control:
+  train_loss: loss_rec_plus_loss_acs
+  checkpoint_selection_metric: val_loss_rec_mean
+  scheduler_metric: val_loss_rec_mean
+  early_stopping_metric: val_loss_rec_mean
+  acs_loss_used_for_backprop: true
+  acs_loss_used_for_checkpointing: false
+  image_metrics_used_for_checkpointing: false
+  image_metrics_used_for_scheduler: false
+  image_metrics_used_for_early_stopping: false
+outputs:
+  output_dir: local_outputs/exp004_theta_norm_fix_full
+  best_checkpoint: local_outputs/exp004_theta_norm_fix_full/best_model.pt
+  last_checkpoint: local_outputs/exp004_theta_norm_fix_full/last_model.pt

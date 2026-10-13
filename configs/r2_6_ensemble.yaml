@@ -1,0 +1,44 @@
+experiment:
+  id: r2_6_ensemble
+  name: Reviewer 2.6 three-member ensemble disagreement comparator
+inputs:
+  cache_manifest: local_outputs/exp006_reliability_cache_traincal_theta_norm_fix/cache_manifest.csv
+data:
+  train_split: train
+  val_split: calibration
+  zero_channels:
+  - 3
+  - 4
+  - 5
+model:
+  class: ReliabilityUNetSmall
+  in_channels: 6
+  out_channels: 1
+  base_channels: 8
+ensemble:
+  size: 3
+  member_seeds:
+  - 20260529
+  - 20260530
+  - 20260531
+  variance: population
+  unbiased: false
+training:
+  epochs: 50
+  batch_size: 1
+  num_workers: 0
+  optimizer: Adam
+  learning_rate: 0.0001
+  weight_decay: 1.0e-06
+  loss: huber
+  huber_delta: 0.1
+  early_stopping_patience: 8
+  min_delta_mae: 0.0005
+  checkpoint_selection_metric: calibration_mae
+governance:
+  lambda_hold_access: false
+  test_access_during_development: false
+  member_selection: independent best calibration-MAE checkpoint per member
+  hyperparameter_search: false
+outputs:
+  output_dir: local_outputs/r2_6_uq_comparators/ensemble
