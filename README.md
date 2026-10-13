@@ -59,7 +59,7 @@ See [`docs/data_access.md`](docs/data_access.md) to obtain the dataset lawfully 
 
 ## Redistribution and research integrity
 
-Do **not** commit fastMRI `.h5` files, patient- or slice-level manifests, intermediate pixel arrays, `.npz` caches, generated MRI slices, private model checkpoints, or private system paths. Researchers must obtain source data independently, and any figure containing MRI anatomy needs a separate permissions review. The repository's `.gitignore` blocks common local inputs/outputs but is not a substitute for manual review.
+We do not have ight to redistribute the data. Researchers must obtain source data independently
 
 ## Citation and status
 
