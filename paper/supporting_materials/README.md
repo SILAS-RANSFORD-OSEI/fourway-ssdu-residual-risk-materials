@@ -6,4 +6,4 @@ Included files may contain final summary metrics, bootstrap summaries, conformal
 
 This folder does not contain raw fastMRI data, trained model checkpoints, intermediate cache arrays, private Google Drive paths, HDF5 files, NPZ files, or epoch-level training logs.
 
-The files here are intended to support reproducibility of the reported manuscript figures and tables without exposing private or large experimental artifacts.
+The files here are intended to support reproducibility of the reported manuscript figures and tables
