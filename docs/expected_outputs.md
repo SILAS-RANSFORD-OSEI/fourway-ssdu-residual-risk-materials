@@ -1,6 +1,6 @@
 # Expected outputs — revised Paper 1
 
-The revised manuscript reports **six main figures**, **five main tables**, and **eight supplementary tables**. The following outline records their substantive roles; it does not imply that every figure or table has been cleared for redistribution or rebuilt from the public release.
+The revised manuscript reports **six main figures**, **five main tables**, and **eight supplementary tables**. The following outline records their substantive roles.
 
 ## Main figures (R1)
 
@@ -10,8 +10,6 @@ The revised manuscript reports **six main figures**, **five main tables**, and *
 4. **Figure 4:** MRI-volume empirical interval coverage of Full-CNN and A4-CNN.
 5. **Figure 5:** Quantitatively selected reconstructed-MRI and residual-risk examples (**restricted-data permission review required before public redistribution**).
 6. **Figure 6:** Residual-risk predictions versus MC-dropout and deep-ensemble predictive variance.
-
-Formatted manuscript figures and tables are intentionally **not hosted** in this research-code repository. Figure 5 contains MRI-derived images requiring separate redistribution permission. Historical notes under `paper/captions/` are not authoritative R1 captions.
 
 ## Main tables (R1)
 
