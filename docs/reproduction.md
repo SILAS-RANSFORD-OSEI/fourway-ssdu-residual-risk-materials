@@ -1,6 +1,6 @@
 # Reproduction guide — Paper 1 R1
 
-This guide describes the supplied entry points and frozen experiment configuration **without redistributing fastMRI data or private intermediate arrays**.
+This guide describes the supplied entry points and frozen experiment configuration **without redistributing fastMRI data**
 
 All paths in the commands below are relative to the **repository root**. The template configurations preserve frozen settings such as the seeds, ACS allocation, network dimensions, and thresholds; only local input/output paths were made portable.
 
@@ -48,7 +48,7 @@ EXP004 uses the revised Θ-only normalization path. EXP007 is the primary Full-C
 
 ## 5. Reserved verification and inference
 
-After the appropriate private calibration/test cache artifacts exist, the corrected verification entry point is:
+
 
 ```bash
 python scripts/exp009_holdout_verification_corrected.py   --config configs/exp009_holdout_verification_corrected_final.yaml   --data-root local_data/fastmri_brain_multicoil   --cache-manifest local_data/evaluation/calibration_test_cache_manifest.csv
@@ -62,18 +62,10 @@ The volume-cluster bootstrap entry point is:
 python scripts/exp010_bootstrap_metrics_corrected.py   --config configs/exp010_bootstrap_metrics_corrected.yaml
 ```
 
-It requires `local_data/evaluation/sampled_test_pixels_corrected.csv.gz`, a **private, per-pixel** input; that file is neither supplied nor suitable for GitHub. The configuration retains the frozen input SHA-256 and calibration-derived high-risk threshold. The aggregate output tables are already supplied under `paper/supporting_materials/`.
-
-## 6. Predictive-variance comparators
-
-The R2.6 scripts provide `r2_6_train_uq_comparator.py`, `r2_6_infer_uq_test.py`, and `src/fourway_mri/r2_6_uq_model.py`. Their frozen MC-dropout and ensemble settings are in `configs/r2_6_mc_dropout.yaml` and `configs/r2_6_ensemble.yaml`.
-
-The training entry point needs `--method`, `--config`, `--resolved-manifest`, and `--output-dir`, with `--member-seed` for individual ensemble members. Test inference additionally requires the frozen checkpoints, resolved test manifest, sampled-pixel artifact, and output destinations. These data-dependent inputs are **not** distributed. 
-R2.9 full-pipeline alternative-partition seed retraining was **not completed** and should not be reported as reproduced.
 
 ## 7. Interpretation and available outputs
 
-Refer to `paper/supporting_materials/` for frozen aggregate AXT2 metrics, bootstrap summaries, volume-level calibration, AXFLAIR results, verification-budget sensitivity, target-construction sensitivity, auxiliary reference-error correspondence, and R2.6 comparisons.
+Refer to `paper/supporting_materials/` for frozen aggregate AXT2 metrics, bootstrap summaries, volume-level calibration, AXFLAIR results, verification-budget sensitivity, target-construction sensitivity, auxiliary reference-error correspondence.
 
 
 
