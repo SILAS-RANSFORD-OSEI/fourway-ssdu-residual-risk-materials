@@ -2,7 +2,7 @@
 
 This study used **fastMRI brain multicoil** acquisitions: an AXT2 development/evaluation cohort and a patient-disjoint AXFLAIR cohort for a within-fastMRI sequence-shift analysis.
 
-The official fastMRI access portal is <https://fastmri.med.nyu.edu/>. Request or obtain the data through the provider and comply with the applicable terms. Data access is **not** granted by this software repository.
+The official fastMRI access portal is <https://fastmri.med.nyu.edu/>. Request or obtain the data through the provider and comply with the applicable terms.
 
 
 
